@@ -231,7 +231,18 @@ p {
   grid-template-columns: auto;
   grid-template-rows: auto;
   gap: 4rem;
+  max-width: 90%;
+  margin: 0 auto;
 }
+
+@media (min-width: 900px) {
+  .grid-nosotros {
+    max-width: 70%;
+  }
+
+}
+
+
 
 /*sesion nosotros*/
 
@@ -244,7 +255,6 @@ p {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: autos;
     column-gap: 2rem;
-    max-width: 90%;
     margin: 0 auto;
   }
 
@@ -269,7 +279,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: autos;
     column-gap: 2rem;
-    max-width: 100%;
+    margin-top: 3rem;
   }
 
   .nosotros__sesion1 {
@@ -304,17 +314,19 @@ p {
   font-family: var(--fuenteSecundaria);
 }
 
-.iconos {
-  display: flex;
-}
-
 .nosotros__imagen {
   margin: auto;
-  width: 40rem;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .nosotros__imagen {
+    width: 40rem;
+  }
 }
 
 /*sesion equipo*/
-.equipo__titulo {
+.titulo {
   text-transform: uppercase;
   letter-spacing: 1rem;
   color: var(--alternativo3);
@@ -361,6 +373,26 @@ p {
   font-family: var(--fuenteSecundaria);
   font-weight: 400;
   font-size: 1.5rem;
+}
+
+/*sesion mision y vision*/
+.mision-vision {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .mision-vision {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 3rem;
+    max-width: 80%;
+  }
+
 }
 
 /*----------------------PSICOLOGIA----------------------*/
@@ -574,4 +606,92 @@ p {
   }
 }
 
-/*----------------------INDEX----------------------*/
+/*----------------------Iniciar Sesion----------------------*/
+
+.imagen-fondo {
+  background-image: url("/img/fondo\ sesion.jpg");
+  background-repeat: none;
+  background-size: cover;
+  height: 80rem;
+  position: relative;
+  background-position: center;
+}
+
+.contenido-fondo {
+  position: absolute;
+  background-color: rgb(0 0 0 /40%);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*--- formulario ---*/
+
+.formulario {
+  margin: 1rem auto;
+  padding: 6rem;
+  border-radius: 1rem;
+  background-color: rgb(134 189 233 /40%);
+}
+
+.formulario fieldset {
+  color: var(--negro);
+}
+
+.formulario legend {
+  color: var(--negro);
+  text-align: center;
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding: 3rem;
+}
+
+
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo a {
+  color: var(--negro);
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.formulario-bt {
+  color: var(--blanco);
+  font-weight: 400;
+}
+
+.formulario-bt:hover {
+  font-weight: 700;
+}
